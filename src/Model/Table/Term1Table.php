@@ -12,7 +12,6 @@ use Cake\Validation\Validator;
  * Term1 Model
  *
  * @property \App\Model\Table\StudentsTable&\Cake\ORM\Association\BelongsTo $Students
- * @property \App\Model\Table\FinalsTable&\Cake\ORM\Association\HasMany $Finals
  *
  * @method \App\Model\Entity\Term1 newEmptyEntity()
  * @method \App\Model\Entity\Term1 newEntity(array $data, array $options = [])
@@ -48,7 +47,10 @@ class Term1Table extends Table
             'foreignKey' => 'Student_id',
             'joinType' => 'INNER',
         ]);
-        $this->hasMany('Finals', [
+        $this->hasMany('Finalresults', [
+            'foreignKey' => 'term1_id',
+        ]);
+        $this->hasMany('Term2', [
             'foreignKey' => 'term1_id',
         ]);
     }

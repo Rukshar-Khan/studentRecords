@@ -55,39 +55,6 @@
                     <td><?= $this->Number->format($term1->Percentage) ?></td>
                 </tr>
             </table>
-            <div class="related">
-                <h4><?= __('Related Finals') ?></h4>
-                <?php if (!empty($term1->finals)) : ?>
-                <div class="table-responsive">
-                    <table>
-                        <tr>
-                            <th><?= __('Id') ?></th>
-                            <th><?= __('Term1 Id') ?></th>
-                            <th><?= __('Term2 Id') ?></th>
-                            <th><?= __('Total') ?></th>
-                            <th><?= __('Percentage') ?></th>
-                            <th><?= __('Grade') ?></th>
-                            <th class="actions"><?= __('Actions') ?></th>
-                        </tr>
-                        <?php foreach ($term1->finals as $finals) : ?>
-                        <tr>
-                            <td><?= h($finals->id) ?></td>
-                            <td><?= h($finals->term1_id) ?></td>
-                            <td><?= h($finals->term2_id) ?></td>
-                            <td><?= h($finals->total) ?></td>
-                            <td><?= h($finals->Percentage) ?></td>
-                            <td><?= h($finals->Grade) ?></td>
-                            <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'Finals', 'action' => 'view', $finals->id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['controller' => 'Finals', 'action' => 'edit', $finals->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Finals', 'action' => 'delete', $finals->id], ['confirm' => __('Are you sure you want to delete # {0}?', $finals->id)]) ?>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </table>
-                </div>
-                <?php endif; ?>
-            </div>
         </div>
     </div>
 </div>
